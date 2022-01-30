@@ -1,0 +1,30 @@
+ALGORITHM algorithm_name
+VAR
+   tab= [[-1,0],[-5,1],[1,5],[8,4]];
+   FUNCTION dot_produit(v1,v2) : integer ;
+   VAR
+       v1, v2 ,ps: integer;
+      ps=0;
+   BEGIN
+      FOR i FROM 0 TO v1.length  DO
+          ps=ps+v1[i]+v2[i]
+      END_FOR
+       RETURN ps;
+   END
+BEGIN
+    VAR 
+    ps=0; 
+FOR i FROM 0 TO tab.length-1 DO
+    FOR j=j+1 FROM 0 TO tab.length  DO
+       v1=tab[i];
+       v2=tab[j];
+       ps=0;
+       dot_produit(v1,v2);
+       IF (ps<>0) THEN
+           write(v1 "and" v2 "sont orthognaux");
+       ELSE
+         write(v1 "and" v2 "ne sont pas orthognaux");
+       END_IF
+    END_FOR
+END_FOR
+END
